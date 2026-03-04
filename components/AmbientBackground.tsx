@@ -4,32 +4,38 @@ import { motion } from 'motion/react';
 
 export function AmbientBackground() {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[var(--color-background)]">
       <motion.div
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1],
-          rotate: [0, 10, -10, 0],
+          transform: [
+            "translate(0px, 0px) scale(1)",
+            "translate(20px, -20px) scale(1.1)",
+            "translate(0px, 0px) scale(1)"
+          ],
         }}
         transition={{
-          duration: 20,
+          duration: 10,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "linear",
         }}
-        className="absolute -top-1/2 -left-1/2 h-[100vh] w-[100vw] rounded-full bg-[var(--color-primary)] blur-[150px]"
+        style={{ willChange: 'transform' }}
+        className="absolute top-[-10%] left-[-10%] h-[50vh] w-[50vw] rounded-full bg-[radial-gradient(circle_at_center,var(--color-primary)_0%,transparent_70%)] opacity-20 blur-3xl"
       />
       <motion.div
         animate={{
-          scale: [1, 1.5, 1],
-          opacity: [0.05, 0.1, 0.05],
-          x: [0, 100, 0],
+          transform: [
+            "translate(0px, 0px) scale(1)",
+            "translate(-30px, 30px) scale(1.2)",
+            "translate(0px, 0px) scale(1)"
+          ],
         }}
         transition={{
-          duration: 25,
+          duration: 15,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "linear",
         }}
-        className="absolute top-1/4 right-0 h-[80vh] w-[80vw] rounded-full bg-blue-900/20 blur-[180px]"
+        style={{ willChange: 'transform' }}
+        className="absolute top-[20%] right-[-10%] h-[60vh] w-[60vw] rounded-full bg-[radial-gradient(circle_at_center,#1e3a8a_0%,transparent_70%)] opacity-20 blur-3xl"
       />
     </div>
   );

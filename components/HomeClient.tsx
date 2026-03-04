@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { motion } from 'motion/react';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { BriefIntro } from '@/components/BriefIntro';
@@ -25,11 +26,19 @@ export function HomeClient({ repos, movies, portfolioData }: HomeClientProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -38,10 +47,13 @@ export function HomeClient({ repos, movies, portfolioData }: HomeClientProps) {
       <AmbientBackground />
       <Navbar isScrolled={isScrolled} />
       
-      <div className={cn(
-        "transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
-        isScrolled ? "md:pl-20" : ""
-      )}>
+      <motion.div 
+        layout
+        transition={{ type: 'spring', damping: 20, stiffness: 100 }}
+        className={cn(
+          isScrolled ? "md:pl-20" : ""
+        )}
+      >
         <Hero personalInfo={portfolioData.personalInfo} />
         <BriefIntro />
         <FeaturedProjects projects={portfolioData.projects} />
@@ -50,7 +62,7 @@ export function HomeClient({ repos, movies, portfolioData }: HomeClientProps) {
         <Strengths skills={portfolioData.skills} />
         <Movies movies={movies} />
         <Footer />
-      </div>
+      </motion.div>
     </main>
   );
 }

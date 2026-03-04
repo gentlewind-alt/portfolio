@@ -36,8 +36,9 @@ export function Navbar({ isScrolled }: { isScrolled: boolean }) {
   return (
     <motion.header
       layout
+      transition={{ type: 'spring', damping: 20, stiffness: 100 }}
       className={cn(
-        "z-50 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+        "z-50 backdrop-blur-md",
         isScrolled
           ? "fixed top-0 left-0 h-screen w-20 hover:w-64 border-r border-white/5 bg-[var(--color-background)]/95 flex flex-col items-start py-8 px-4 gap-8 group/sidebar overflow-hidden"
           : "fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl h-16 rounded-full border border-white/10 bg-[var(--color-background)]/80 flex items-center justify-between px-6 shadow-lg shadow-black/20"
@@ -48,19 +49,19 @@ export function Navbar({ isScrolled }: { isScrolled: boolean }) {
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)] group-hover:bg-[var(--color-primary)]/20 transition-colors shrink-0">
           <Terminal size={20} />
         </div>
-        <span 
+        <motion.span 
+          layout="position"
           className={cn(
             "text-lg font-bold tracking-tight text-white group-hover:text-[var(--color-primary)] transition-colors whitespace-nowrap",
             isScrolled ? "opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-300" : ""
           )}
         >
           Portfolio
-        </span>
+        </motion.span>
       </Link>
 
       {/* Nav Links */}
       <nav className={cn(
-        "transition-all duration-500",
         isScrolled 
           ? "flex flex-col gap-2 w-full mt-4" 
           : "hidden md:flex items-center gap-8"
