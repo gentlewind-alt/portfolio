@@ -1,0 +1,83 @@
+{
+  "personalInfo": {
+    "name": "Samarth Singh Rawat",
+    "title": "Full Stack Developer & ML Enthusiast",
+    "email": "samarthrawat18@email.com",
+    "phone": "+91 8984100922",
+    "location": "Odisha, India",
+    "bio": "Detail-oriented and motivated B.Tech IT student at KIIT Bhubaneswar with hands-on experience in Machine Learning, IoT Systems and Data Structures. Passionate about creating efficient, data-driven, and scalable solutions that merge AI, embedded technology, and web systems.",
+    "age": 20,
+    "github": "samarthrawat18",
+    "linkedin": "",
+    "instagram": "samarthrawat18"
+  },
+  "education": [
+    {
+      "institution": "Kalinga Institute of Industrial Technology (KIIT)",
+      "degree": "B.Tech in Information Technology",
+      "year": "Expected May 2026",
+      "details": "Bhubaneswar, Odisha • 7th Semester CPI: 8.11"
+    },
+    {
+      "institution": "Lal Bahadur Shastri Public School",
+      "degree": "12th Grade, CBSE",
+      "year": "2022",
+      "details": "Kota • Percentage: 79.4%"
+    },
+    {
+      "institution": "GMR DAV Varalakshmi Public School",
+      "degree": "10th Grade, CBSE",
+      "year": "2020",
+      "details": "Dhenkanal • Percentage: 90%"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": "Python, Java, C, HTML/CSS"
+    },
+    {
+      "category": "Frameworks/Libraries",
+      "items": "TensorFlow, Scikit-learn"
+    },
+    {
+      "category": "Tools",
+      "items": "Git, Microsoft Office, Power BI, Arduino, LaTeX, VS Code"
+    },
+    {
+      "category": "Databases",
+      "items": "MySQL"
+    },
+    {
+      "category": "Platforms",
+      "items": "ESP32, Spotify API"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Movie Recommendation System",
+      "tech": "Python, Scikit-learn, NumPy, HTML",
+      "description": [
+        "Built a collaborative filtering engine to generate personalized movie suggestions.",
+        "Processed large datasets and designed a simple web UI for user input and recommendations."
+      ]
+    },
+    {
+      "title": "IoT Smart Alarm Clock",
+      "tech": "ESP32-C3, OLED, NTP, RTC, Buzzer, NeoPixel, Rotary Encoder",
+      "description": [
+        "Developed a smart alarm clock using ESP32-C3 with time sync via NTP and DS1307 RTC.",
+        "Integrated buzzer alerts, rotary encoder controls, and motion sensors for user interaction.",
+        "Added NeoPixel LED animations and OLED display for enhanced UI feedback."
+      ]
+    },
+    {
+      "title": "ISL Hand Gesture Recognition",
+      "tech": "Python, Scikit-learn, NumPy, Pandas",
+      "description": [
+        "Processed ISL hand gesture datasets in CSV format with landmark and movement data.",
+        "Trained a Random Forest model to classify Indian Sign Language gestures accurately."
+      ]
+    }
+  ]
+}
